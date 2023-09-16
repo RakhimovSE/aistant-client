@@ -7,9 +7,10 @@ import {
   useDisclosure,
 } from '@chakra-ui/react'
 
-import { SidebarContent, MobileNav } from './sidebar'
+import { SidebarContent, MobileNav } from './components'
 
-export default function Page() {
+export default function Page(props) {
+  console.log(props)
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
