@@ -9,8 +9,7 @@ import {
 
 import { SidebarContent, MobileNav } from './components'
 
-export default function Page(props) {
-  console.log(props)
+export default function Page() {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
