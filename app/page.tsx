@@ -7,7 +7,7 @@ import {
   useDisclosure,
 } from '@chakra-ui/react'
 
-import { SidebarContent, MobileNav } from './components'
+import { SidebarContent, MobileNav } from '@/app/components'
 
 export default function Page() {
   const { isOpen, onOpen, onClose } = useDisclosure()
