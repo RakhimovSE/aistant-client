@@ -5,6 +5,9 @@ import {
   useColorModeValue,
   Text,
   BoxProps,
+  useColorMode,
+  Button,
+  Center,
 } from '@chakra-ui/react'
 import {
   FiHome,
@@ -35,9 +38,10 @@ const LinkItems: Array<LinkItemProps> = [
 ]
 
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
+  const { colorMode, toggleColorMode } = useColorMode()
+
   return (
     <Box
-      transition="3s ease"
       bg={useColorModeValue('white', 'gray.900')}
       borderRight="1px"
       borderRightColor={useColorModeValue('gray.200', 'gray.700')}
@@ -45,7 +49,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       pos="fixed"
       h="full"
       {...rest}>
-      <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
+      <Flex as='header' h="20" alignItems="center" mx="8" justifyContent="space-between">
         <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
           {process.env.title}
         </Text>
@@ -56,6 +60,11 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
           {link.name}
         </NavItem>
       ))}
+      <Center as="footer" py={{ base: '12', md: '16' }}>
+        <Button onClick={toggleColorMode}>
+          Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
+        </Button>
+      </Center>
     </Box>
   )
 }

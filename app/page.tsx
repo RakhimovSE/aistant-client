@@ -9,7 +9,7 @@ import {
 
 import { SidebarContent, MobileNav } from '@/app/components'
 
-export default function Page() {
+export default function App() {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
