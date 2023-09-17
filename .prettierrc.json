@@ -8,9 +8,8 @@
     "^react(.*)$",
     "^@chakra-ui/(.*)$",
     "<THIRD_PARTY_MODULES>",
-    "^(.*)types$",
     "^@/(.*)$",
-    "^./(.*)$"
+    "^[./]"
   ],
   "importOrderSortSpecifiers": true
 }
