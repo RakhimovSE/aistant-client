@@ -1,12 +1,12 @@
 import { useCallback, useState } from 'react'
 import { Text } from '@chakra-ui/react'
 import { useCompletion } from 'ai/react'
-import { CreateMessageFunction, Message, MessageSender } from './types'
 import ChatBody from './chat-body'
 import ChatInput from './chat-input'
+import { CreateMessageFunction, Message, MessageSender } from './types'
 
 export default function Chat() {
-  const { completion, complete } = useCompletion({
+  const { completion, isLoading, complete } = useCompletion({
     onFinish: (_prompt, completion) =>
       createMessage(MessageSender.AI, completion),
   })
@@ -25,8 +25,8 @@ export default function Chat() {
 
   return (
     <>
-      <ChatBody />
-      <Text>{completion}</Text>
+      <ChatBody messages={messages} />
+      {isLoading && <Text>{completion}</Text>}
       <ChatInput createMessage={createMessage} complete={complete} />
     </>
   )
