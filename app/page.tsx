@@ -7,21 +7,25 @@ import {
   useDisclosure,
 } from '@chakra-ui/react'
 
-import { SidebarContent, MobileNav } from '@/app/components'
+import { SidebarContent, MobileNav, Chat } from '@/app/components'
 
 export default function App() {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
     <Box minH="100vh" bg={useColorModeValue('gray.100', 'gray.900')}>
-      <SidebarContent onClose={() => onClose} display={{ base: 'none', md: 'block' }} />
+      <SidebarContent
+        onClose={() => onClose}
+        display={{ base: 'none', md: 'block' }}
+      />
       <Drawer
         isOpen={isOpen}
         placement="left"
         onClose={onClose}
         returnFocusOnClose={false}
         onOverlayClick={onClose}
-        size="full">
+        size="full"
+      >
         <DrawerContent>
           <SidebarContent onClose={onClose} />
         </DrawerContent>

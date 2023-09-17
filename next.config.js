@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    env: {
-        title: "AIstant",
-    }
+  env: {
+    title: 'AIstant',
+  },
 }
 
 module.exports = nextConfig

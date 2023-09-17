@@ -16,11 +16,7 @@ import {
   SkeletonCircle,
   Skeleton,
 } from '@chakra-ui/react'
-import {
-  FiMenu,
-  FiBell,
-  FiChevronDown,
-} from 'react-icons/fi'
+import { FiMenu, FiBell, FiChevronDown } from 'react-icons/fi'
 
 import useUser from '@/app/hooks/use-user'
 
@@ -41,7 +37,8 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
       borderBottomWidth="1px"
       borderBottomColor={useColorModeValue('gray.200', 'gray.700')}
       justifyContent={{ base: 'space-between', md: 'flex-end' }}
-      {...rest}>
+      {...rest}
+    >
       <IconButton
         display={{ base: 'flex', md: 'none' }}
         onClick={onOpen}
@@ -54,21 +51,28 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         display={{ base: 'flex', md: 'none' }}
         fontSize="2xl"
         fontFamily="monospace"
-        fontWeight="bold">
+        fontWeight="bold"
+      >
         {process.env.title}
       </Text>
 
       <HStack spacing={{ base: '0', md: '6' }}>
-        <IconButton size="lg" variant="ghost" aria-label="open menu" icon={<FiBell />} />
+        <IconButton
+          size="lg"
+          variant="ghost"
+          aria-label="open menu"
+          icon={<FiBell />}
+        />
         <Flex alignItems={'center'}>
           <Menu>
-            <MenuButton py={2} transition="all 0.3s" _focus={{ boxShadow: 'none' }}>
+            <MenuButton
+              py={2}
+              transition="all 0.3s"
+              _focus={{ boxShadow: 'none' }}
+            >
               <HStack>
                 {user ? (
-                  <Avatar
-                    size="sm"
-                    src={user.avatar}
-                  />
+                  <Avatar size="sm" src={user.avatar} />
                 ) : (
                   <SkeletonCircle />
                 )}
@@ -76,10 +80,13 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
                   display={{ base: 'none', md: 'flex' }}
                   alignItems="flex-start"
                   spacing="1px"
-                  ml="2">
+                  ml="2"
+                >
                   {user ? (
                     <>
-                      <Text fontSize="sm">{user.first_name} {user.last_name}</Text>
+                      <Text fontSize="sm">
+                        {user.first_name} {user.last_name}
+                      </Text>
                       <Text fontSize="xs" color="gray.600">
                         {user.email}
                       </Text>
@@ -98,7 +105,8 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
             </MenuButton>
             <MenuList
               bg={useColorModeValue('white', 'gray.900')}
-              borderColor={useColorModeValue('gray.200', 'gray.700')}>
+              borderColor={useColorModeValue('gray.200', 'gray.700')}
+            >
               <MenuItem>Profile</MenuItem>
               <MenuItem>Settings</MenuItem>
               <MenuItem>Billing</MenuItem>
