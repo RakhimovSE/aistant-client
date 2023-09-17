@@ -1,7 +1,6 @@
-export default async function fetcher<JSON = any>(
-  input: RequestInfo,
-  init?: RequestInit
-): Promise<JSON> {
-  const res = await fetch(input, init)
-  return res.json()
-}
+import { BareFetcher } from 'swr'
+
+const fetcher: BareFetcher<any> = (input) =>
+  fetch(input).then((res) => res.json())
+
+export default fetcher
