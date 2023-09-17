@@ -1,3 +1,4 @@
-const fetcher = (...args) => fetch(...args).then((res) => res.json())
+const fetcher: typeof fetch = (input, init?) =>
+  fetch(input, init).then((res) => res.json())
 
 export default fetcher
