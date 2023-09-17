@@ -1,22 +1,23 @@
+import { FiBell, FiChevronDown, FiMenu } from 'react-icons/fi'
+
 import {
-  IconButton,
   Avatar,
   Box,
   Flex,
-  HStack,
-  VStack,
-  useColorModeValue,
-  Text,
   FlexProps,
+  HStack,
+  IconButton,
   Menu,
   MenuButton,
   MenuDivider,
   MenuItem,
   MenuList,
-  SkeletonCircle,
   Skeleton,
+  SkeletonCircle,
+  Text,
+  VStack,
+  useColorModeValue,
 } from '@chakra-ui/react'
-import { FiMenu, FiBell, FiChevronDown } from 'react-icons/fi'
 
 import useUser from '@/app/hooks/use-user'
 

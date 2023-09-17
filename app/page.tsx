@@ -1,13 +1,14 @@
 'use client'
+
 import {
   Box,
-  useColorModeValue,
   Drawer,
   DrawerContent,
+  useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react'
 
-import { SidebarContent, MobileNav, Chat } from '@/app/components'
+import { Chat, MobileNav, SidebarContent } from '@/app/components'
 
 export default function App() {
   const { isOpen, onOpen, onClose } = useDisclosure()

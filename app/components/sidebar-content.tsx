@@ -1,22 +1,23 @@
+import { IconType } from 'react-icons'
+import {
+  FiCompass,
+  FiHome,
+  FiSettings,
+  FiStar,
+  FiTrendingUp,
+} from 'react-icons/fi'
+
 import {
   Box,
-  CloseButton,
-  Flex,
-  useColorModeValue,
-  Text,
   BoxProps,
-  useColorMode,
   Button,
   Center,
+  CloseButton,
+  Flex,
+  Text,
+  useColorMode,
+  useColorModeValue,
 } from '@chakra-ui/react'
-import {
-  FiHome,
-  FiTrendingUp,
-  FiCompass,
-  FiStar,
-  FiSettings,
-} from 'react-icons/fi'
-import { IconType } from 'react-icons'
 
 import NavItem from './nav-item'
 
