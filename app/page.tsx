@@ -7,7 +7,6 @@ import {
   useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react'
-
 import { Chat, MobileNav, SidebarContent } from '@/app/components'
 
 export default function App() {

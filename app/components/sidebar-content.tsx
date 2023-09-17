@@ -6,7 +6,6 @@ import {
   FiStar,
   FiTrendingUp,
 } from 'react-icons/fi'
-
 import {
   Box,
   BoxProps,
@@ -18,7 +17,6 @@ import {
   useColorMode,
   useColorModeValue,
 } from '@chakra-ui/react'
-
 import NavItem from './nav-item'
 
 interface LinkItemProps {

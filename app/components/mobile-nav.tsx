@@ -1,5 +1,4 @@
 import { FiBell, FiChevronDown, FiMenu } from 'react-icons/fi'
-
 import {
   Avatar,
   Box,
@@ -18,7 +17,6 @@ import {
   VStack,
   useColorModeValue,
 } from '@chakra-ui/react'
-
 import useUser from '@/app/hooks/use-user'
 
 interface MobileProps extends FlexProps {

@@ -1,7 +1,5 @@
 import useSWR from 'swr'
-
 import User from '@/app/types/user'
-
 import fetcher from './fetcher'
 
 export default function useUser() {
