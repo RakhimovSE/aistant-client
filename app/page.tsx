@@ -10,16 +10,16 @@ import {
   useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react'
-import { Chat, MobileNav, SidebarContent } from '@/app/components'
+import { Chat, Header, SideNav } from './components'
 
 export default function App() {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
     <Stack direction="column" h="100vh" spacing={0}>
-      <MobileNav onOpen={onOpen} />
+      <Header onSidebarOpen={onOpen} />
       <Stack direction="row" flex={1} spacing={0}>
-        <SidebarContent
+        <SideNav
           hidden={useBreakpointValue({ base: true, md: false }, { ssr: false })}
           borderRight="1px"
           borderRightColor={useColorModeValue('gray.200', 'gray.700')}
@@ -35,7 +35,7 @@ export default function App() {
           <DrawerContent>
             <DrawerCloseButton />
             <DrawerBody>
-              <SidebarContent />
+              <SideNav />
             </DrawerBody>
           </DrawerContent>
         </Drawer>

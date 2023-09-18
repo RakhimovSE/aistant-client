@@ -12,6 +12,7 @@ import {
   BoxProps,
   Center,
   IconButton,
+  Stack,
   useColorMode,
   useColorModeValue,
 } from '@chakra-ui/react'
@@ -30,27 +31,26 @@ const LinkItems: Array<LinkItemProps> = [
   { name: 'Settings', icon: FiSettings },
 ]
 
-const SidebarContent = (props: BoxProps) => {
+const SideNav = (props: BoxProps) => {
   const { toggleColorMode } = useColorMode()
   const SwitchIcon = useColorModeValue(FaMoon, FaSun)
 
   return (
-    <Box {...props}>
-      <Box flex={1}>
+    <Box p="1rem" {...props}>
+      <Stack direction="column" spacing={0}>
         {LinkItems.map((link) => (
           <NavItem key={link.name} icon={link.icon}>
             {link.name}
           </NavItem>
         ))}
-      </Box>
-      <Center as="footer" py={{ base: '12', md: '16' }}>
+      </Stack>
+      <Center py={{ base: '12', md: '16' }}>
         <IconButton
           size="md"
           fontSize="lg"
           aria-label={`Switch to ${useColorModeValue('dark', 'light')} mode`}
           variant="ghost"
           color="current"
-          marginLeft="2"
           onClick={toggleColorMode}
           icon={<SwitchIcon />}
         />
@@ -59,4 +59,4 @@ const SidebarContent = (props: BoxProps) => {
   )
 }
 
-export default SidebarContent
+export default SideNav

@@ -25,8 +25,8 @@ export default function Chat() {
 
   return (
     <>
-      <Box overflow="scroll" h={0} flex={1}>
-        <ChatBody messages={messages} />
+      <Box overflow="scroll" flex={1}>
+        <ChatBody messages={messages} h={0} />
       </Box>
       <Box>
         {isLoading && <Text>{completion}</Text>}

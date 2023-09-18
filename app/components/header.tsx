@@ -15,16 +15,17 @@ import {
   SkeletonCircle,
   Spacer,
   Text,
+  UseDisclosureReturn,
   VStack,
   useColorModeValue,
 } from '@chakra-ui/react'
 import useUser from '@/app/hooks/use-user'
 
-interface MobileProps extends FlexProps {
-  onOpen: () => void
+interface NavbarProps extends FlexProps {
+  onSidebarOpen: UseDisclosureReturn['onOpen']
 }
 
-const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
+const Navbar = ({ onSidebarOpen, ...rest }: NavbarProps) => {
   const { user } = useUser()
 
   return (
@@ -39,7 +40,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
     >
       <IconButton
         display={{ base: 'flex', md: 'none' }}
-        onClick={onOpen}
+        onClick={onSidebarOpen}
         variant="outline"
         aria-label="open menu"
         icon={<FiMenu />}
@@ -115,4 +116,4 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
   )
 }
 
-export default MobileNav
+export default Navbar
