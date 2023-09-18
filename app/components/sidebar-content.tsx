@@ -1,4 +1,5 @@
 import { IconType } from 'react-icons'
+import { FaMoon, FaSun } from 'react-icons/fa'
 import {
   FiCompass,
   FiHome,
@@ -9,11 +10,8 @@ import {
 import {
   Box,
   BoxProps,
-  Button,
   Center,
-  CloseButton,
-  Flex,
-  Text,
+  IconButton,
   useColorMode,
   useColorModeValue,
 } from '@chakra-ui/react'
@@ -24,10 +22,6 @@ interface LinkItemProps {
   icon: IconType
 }
 
-interface SidebarProps extends BoxProps {
-  onClose: () => void
-}
-
 const LinkItems: Array<LinkItemProps> = [
   { name: 'Home', icon: FiHome },
   { name: 'Trending', icon: FiTrendingUp },
@@ -36,33 +30,12 @@ const LinkItems: Array<LinkItemProps> = [
   { name: 'Settings', icon: FiSettings },
 ]
 
-const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
-  const { colorMode, toggleColorMode } = useColorMode()
+const SidebarContent = (props: BoxProps) => {
+  const { toggleColorMode } = useColorMode()
+  const SwitchIcon = useColorModeValue(FaMoon, FaSun)
 
   return (
-    <Box
-      display="flex"
-      flexDirection="column"
-      bg={useColorModeValue('white', 'gray.900')}
-      borderRight="1px"
-      borderRightColor={useColorModeValue('gray.200', 'gray.700')}
-      w={{ base: 'full', md: 60 }}
-      pos="fixed"
-      h="full"
-      {...rest}
-    >
-      <Flex
-        as="header"
-        h="20"
-        alignItems="center"
-        mx="8"
-        justifyContent="space-between"
-      >
-        <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-          {process.env.title}
-        </Text>
-        <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
-      </Flex>
+    <Box {...props}>
       <Box flex={1}>
         {LinkItems.map((link) => (
           <NavItem key={link.name} icon={link.icon}>
@@ -71,9 +44,16 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
         ))}
       </Box>
       <Center as="footer" py={{ base: '12', md: '16' }}>
-        <Button onClick={toggleColorMode}>
-          Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
-        </Button>
+        <IconButton
+          size="md"
+          fontSize="lg"
+          aria-label={`Switch to ${useColorModeValue('dark', 'light')} mode`}
+          variant="ghost"
+          color="current"
+          marginLeft="2"
+          onClick={toggleColorMode}
+          icon={<SwitchIcon />}
+        />
       </Center>
     </Box>
   )

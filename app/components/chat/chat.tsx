@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react'
-import { Text } from '@chakra-ui/react'
+import { Box, Text } from '@chakra-ui/react'
 import { useCompletion } from 'ai/react'
 import ChatBody from './chat-body'
 import ChatInput from './chat-input'
@@ -25,9 +25,13 @@ export default function Chat() {
 
   return (
     <>
-      <ChatBody messages={messages} />
-      {isLoading && <Text>{completion}</Text>}
-      <ChatInput createMessage={createMessage} complete={complete} />
+      <Box overflow="scroll" h={0} flex={1}>
+        <ChatBody messages={messages} />
+      </Box>
+      <Box>
+        {isLoading && <Text>{completion}</Text>}
+        <ChatInput createMessage={createMessage} complete={complete} />
+      </Box>
     </>
   )
 }
