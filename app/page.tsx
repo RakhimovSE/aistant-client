@@ -1,6 +1,5 @@
 "use client"
 
-import React from "react"
 import {
   Drawer,
   DrawerBody,
@@ -21,7 +20,7 @@ export default function App() {
       <Header onSidebarOpen={onOpen} />
       <Stack direction="row" flex={1} spacing={0}>
         <SideNav
-          hidden={useBreakpointValue({ base: true, md: false }, { ssr: false })}
+          hidden={useBreakpointValue({ base: true, md: false })}
           borderRight="1px"
           borderRightColor={useColorModeValue("gray.200", "gray.700")}
         />
