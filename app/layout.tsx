@@ -1,15 +1,12 @@
-import { Metadata } from 'next'
-import { Providers } from './providers'
+import { ReactNode } from "react"
+import { Metadata } from "next"
+import Providers from "./providers"
 
 export const metadata: Metadata = {
   title: process.env.title,
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body>

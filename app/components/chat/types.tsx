@@ -1,12 +1,12 @@
 export enum MessageSender {
-  User = 'user',
-  AI = 'ai',
-  System = 'system',
+  User = "user",
+  AI = "ai",
+  System = "system",
 }
 
 export type CreateMessageFunction = (
   sender: MessageSender,
-  messageText: string
+  messageText: string,
 ) => void
 
 export type Message = {

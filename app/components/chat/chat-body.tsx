@@ -1,7 +1,6 @@
-import React from 'react'
-import { Container, ContainerProps, VStack } from '@chakra-ui/react'
-import ChatMessage from './chat-message'
-import { Message } from './types'
+import { Container, ContainerProps, VStack } from "@chakra-ui/react"
+import ChatMessage from "./chat-message"
+import { Message } from "./types"
 
 interface ChatBodyProps extends ContainerProps {
   messages: Message[]

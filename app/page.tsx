@@ -1,5 +1,6 @@
-'use client'
+"use client"
 
+import React from "react"
 import {
   Drawer,
   DrawerBody,
@@ -9,8 +10,8 @@ import {
   useBreakpointValue,
   useColorModeValue,
   useDisclosure,
-} from '@chakra-ui/react'
-import { Chat, Header, SideNav } from './components'
+} from "@chakra-ui/react"
+import { Chat, Header, SideNav } from "./components"
 
 export default function App() {
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -22,7 +23,7 @@ export default function App() {
         <SideNav
           hidden={useBreakpointValue({ base: true, md: false }, { ssr: false })}
           borderRight="1px"
-          borderRightColor={useColorModeValue('gray.200', 'gray.700')}
+          borderRightColor={useColorModeValue("gray.200", "gray.700")}
         />
         <Drawer
           isOpen={isOpen}
@@ -40,7 +41,7 @@ export default function App() {
           </DrawerContent>
         </Drawer>
         <Stack
-          bg={useColorModeValue('gray.100', 'gray.900')}
+          bg={useColorModeValue("gray.100", "gray.900")}
           direction="column"
           flex={1}
           spacing={0}

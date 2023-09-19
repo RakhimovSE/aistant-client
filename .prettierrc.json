@@ -1,9 +1,5 @@
 {
   "plugins": ["@trivago/prettier-plugin-sort-imports"],
-  "trailingComma": "es5",
-  "tabWidth": 2,
-  "semi": false,
-  "singleQuote": true,
   "importOrder": [
     "^react(.*)$",
     "^@chakra-ui/(.*)$",
@@ -11,5 +7,7 @@
     "^@/(.*)$",
     "^[./]"
   ],
-  "importOrderSortSpecifiers": true
+  "importOrderSortSpecifiers": true,
+  "semi": false,
+  "tabWidth": 2
 }

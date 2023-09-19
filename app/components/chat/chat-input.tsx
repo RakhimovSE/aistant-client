@@ -5,13 +5,13 @@ import {
   Input,
   InputGroup,
   InputRightElement,
-} from '@chakra-ui/react'
-import { UseCompletionHelpers } from 'ai/react'
-import { Field, FieldProps, Form, Formik, FormikConfig } from 'formik'
+} from "@chakra-ui/react"
+import { UseCompletionHelpers } from "ai/react"
+import { Field, FieldProps, Form, Formik, FormikConfig } from "formik"
 import {
   CreateMessageFunction,
   MessageSender,
-} from '@/app/components/chat/types'
+} from "@/app/components/chat/types"
 
 interface ChatInputFormValues {
   message: string
@@ -19,15 +19,15 @@ interface ChatInputFormValues {
 
 interface ChatInputProps {
   createMessage: CreateMessageFunction
-  complete: UseCompletionHelpers['complete']
+  complete: UseCompletionHelpers["complete"]
 }
 
 export default function ChatInput({ createMessage, complete }: ChatInputProps) {
-  const initialValues: ChatInputFormValues = { message: '' }
+  const initialValues: ChatInputFormValues = { message: "" }
 
-  const onSubmit: FormikConfig<ChatInputFormValues>['onSubmit'] = async (
+  const onSubmit: FormikConfig<ChatInputFormValues>["onSubmit"] = async (
     { message },
-    actions
+    actions,
   ) => {
     createMessage(MessageSender.User, message)
     actions.resetForm()
@@ -41,7 +41,7 @@ export default function ChatInput({ createMessage, complete }: ChatInputProps) {
       <Formik initialValues={initialValues} onSubmit={onSubmit}>
         <Form>
           <Field name="message">
-            {({ field, form }: FieldProps<ChatInputFormValues['message']>) => (
+            {({ field, form }: FieldProps<ChatInputFormValues["message"]>) => (
               <FormControl>
                 <InputGroup>
                   <Input
@@ -49,7 +49,7 @@ export default function ChatInput({ createMessage, complete }: ChatInputProps) {
                     pr="4.5rem"
                     autoComplete="off"
                     placeholder="Send a message"
-                    _dark={{ bg: 'gray.700' }}
+                    _dark={{ bg: "gray.700" }}
                     {...field}
                   />
                   <InputRightElement width="4.5rem">

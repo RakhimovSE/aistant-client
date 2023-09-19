@@ -1,4 +1,4 @@
-import { FiBell, FiChevronDown, FiMenu } from 'react-icons/fi'
+import { FiBell, FiChevronDown, FiMenu } from "react-icons/fi"
 import {
   Avatar,
   Box,
@@ -18,14 +18,14 @@ import {
   UseDisclosureReturn,
   VStack,
   useColorModeValue,
-} from '@chakra-ui/react'
-import useUser from '@/app/hooks/use-user'
+} from "@chakra-ui/react"
+import useUser from "@/app/hooks/use-user"
 
 interface NavbarProps extends FlexProps {
-  onSidebarOpen: UseDisclosureReturn['onOpen']
+  onSidebarOpen: UseDisclosureReturn["onOpen"]
 }
 
-const Navbar = ({ onSidebarOpen, ...rest }: NavbarProps) => {
+function Navbar({ onSidebarOpen, ...rest }: NavbarProps) {
   const { user } = useUser()
 
   return (
@@ -34,12 +34,12 @@ const Navbar = ({ onSidebarOpen, ...rest }: NavbarProps) => {
       height="20"
       alignItems="center"
       borderBottomWidth="1px"
-      borderBottomColor={useColorModeValue('gray.200', 'gray.700')}
-      justifyContent={{ base: 'space-between', md: 'flex-end' }}
+      borderBottomColor={useColorModeValue("gray.200", "gray.700")}
+      justifyContent={{ base: "space-between", md: "flex-end" }}
       {...rest}
     >
       <IconButton
-        display={{ base: 'flex', md: 'none' }}
+        display={{ base: "flex", md: "none" }}
         onClick={onSidebarOpen}
         variant="outline"
         aria-label="open menu"
@@ -50,21 +50,21 @@ const Navbar = ({ onSidebarOpen, ...rest }: NavbarProps) => {
         {process.env.title}
       </Text>
 
-      <Spacer display={{ base: 'none', md: 'block' }} />
+      <Spacer display={{ base: "none", md: "block" }} />
 
-      <HStack spacing={{ base: '0', md: '6' }}>
+      <HStack spacing={{ base: "0", md: "6" }}>
         <IconButton
           size="lg"
           variant="ghost"
           aria-label="open menu"
           icon={<FiBell />}
         />
-        <Flex alignItems={'center'}>
+        <Flex alignItems="center">
           <Menu>
             <MenuButton
               py={2}
               transition="all 0.3s"
-              _focus={{ boxShadow: 'none' }}
+              _focus={{ boxShadow: "none" }}
             >
               <HStack>
                 {user ? (
@@ -73,7 +73,7 @@ const Navbar = ({ onSidebarOpen, ...rest }: NavbarProps) => {
                   <SkeletonCircle />
                 )}
                 <VStack
-                  display={{ base: 'none', md: 'flex' }}
+                  display={{ base: "none", md: "flex" }}
                   alignItems="flex-start"
                   spacing="1px"
                   ml="2"
@@ -94,14 +94,14 @@ const Navbar = ({ onSidebarOpen, ...rest }: NavbarProps) => {
                     </>
                   )}
                 </VStack>
-                <Box display={{ base: 'none', md: 'flex' }}>
+                <Box display={{ base: "none", md: "flex" }}>
                   <FiChevronDown />
                 </Box>
               </HStack>
             </MenuButton>
             <MenuList
-              bg={useColorModeValue('white', 'gray.900')}
-              borderColor={useColorModeValue('gray.200', 'gray.700')}
+              bg={useColorModeValue("white", "gray.900")}
+              borderColor={useColorModeValue("gray.200", "gray.700")}
             >
               <MenuItem>Profile</MenuItem>
               <MenuItem>Settings</MenuItem>

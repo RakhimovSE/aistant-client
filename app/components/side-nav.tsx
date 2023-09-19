@@ -1,12 +1,12 @@
-import { IconType } from 'react-icons'
-import { FaMoon, FaSun } from 'react-icons/fa'
+import { IconType } from "react-icons"
+import { FaMoon, FaSun } from "react-icons/fa"
 import {
   FiCompass,
   FiHome,
   FiSettings,
   FiStar,
   FiTrendingUp,
-} from 'react-icons/fi'
+} from "react-icons/fi"
 import {
   Box,
   BoxProps,
@@ -15,8 +15,8 @@ import {
   Stack,
   useColorMode,
   useColorModeValue,
-} from '@chakra-ui/react'
-import NavItem from './nav-item'
+} from "@chakra-ui/react"
+import NavItem from "./nav-item"
 
 interface LinkItemProps {
   name: string
@@ -24,14 +24,14 @@ interface LinkItemProps {
 }
 
 const LinkItems: Array<LinkItemProps> = [
-  { name: 'Home', icon: FiHome },
-  { name: 'Trending', icon: FiTrendingUp },
-  { name: 'Explore', icon: FiCompass },
-  { name: 'Favourites', icon: FiStar },
-  { name: 'Settings', icon: FiSettings },
+  { name: "Home", icon: FiHome },
+  { name: "Trending", icon: FiTrendingUp },
+  { name: "Explore", icon: FiCompass },
+  { name: "Favourites", icon: FiStar },
+  { name: "Settings", icon: FiSettings },
 ]
 
-const SideNav = (props: BoxProps) => {
+function SideNav(props: BoxProps) {
   const { toggleColorMode } = useColorMode()
   const SwitchIcon = useColorModeValue(FaMoon, FaSun)
 
@@ -44,11 +44,11 @@ const SideNav = (props: BoxProps) => {
           </NavItem>
         ))}
       </Stack>
-      <Center py={{ base: '12', md: '16' }}>
+      <Center py={{ base: "12", md: "16" }}>
         <IconButton
           size="md"
           fontSize="lg"
-          aria-label={`Switch to ${useColorModeValue('dark', 'light')} mode`}
+          aria-label={`Switch to ${useColorModeValue("dark", "light")} mode`}
           variant="ghost"
           color="current"
           onClick={toggleColorMode}
