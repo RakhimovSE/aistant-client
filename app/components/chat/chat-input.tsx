@@ -7,7 +7,7 @@ import {
   InputRightElement,
 } from '@chakra-ui/react'
 import { UseCompletionHelpers } from 'ai/react'
-import { Field, FieldProps, Form, Formik } from 'formik'
+import { Field, FieldProps, Form, Formik, FormikConfig } from 'formik'
 import {
   CreateMessageFunction,
   MessageSender,
@@ -25,16 +25,20 @@ interface ChatInputProps {
 export default function ChatInput({ createMessage, complete }: ChatInputProps) {
   const initialValues: ChatInputFormValues = { message: '' }
 
+  const onSubmit: FormikConfig<ChatInputFormValues>['onSubmit'] = async (
+    { message },
+    actions
+  ) => {
+    createMessage(MessageSender.User, message)
+    actions.resetForm()
+    actions.setSubmitting(true)
+    await complete(message)
+    actions.setSubmitting(false)
+  }
+
   return (
     <Container py="1rem">
-      <Formik
-        initialValues={initialValues}
-        onSubmit={async ({ message }, actions) => {
-          createMessage(MessageSender.User, message)
-          actions.resetForm()
-          await complete(message)
-        }}
-      >
+      <Formik initialValues={initialValues} onSubmit={onSubmit}>
         <Form>
           <Field name="message">
             {({ field, form }: FieldProps<ChatInputFormValues['message']>) => (

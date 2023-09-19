@@ -1,6 +1,7 @@
 export enum MessageSender {
   User = 'user',
   AI = 'ai',
+  System = 'system',
 }
 
 export type CreateMessageFunction = (

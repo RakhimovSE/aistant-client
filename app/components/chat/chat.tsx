@@ -11,7 +11,12 @@ export default function Chat() {
       createMessage(MessageSender.AI, completion),
   })
 
-  const [messages, setMessages] = useState<Message[]>([])
+  const [messages, setMessages] = useState<Message[]>([
+    {
+      text: 'Write anything you want and hit "Send"',
+      type: MessageSender.System,
+    },
+  ])
 
   const createMessage = useCallback<CreateMessageFunction>(
     (sender, messageText) => {
@@ -25,7 +30,7 @@ export default function Chat() {
 
   return (
     <>
-      <Box overflow="scroll" flex={1}>
+      <Box overflow="scroll" flex={1} py="1rem">
         <ChatBody messages={messages} h={0} />
       </Box>
       <Box>
