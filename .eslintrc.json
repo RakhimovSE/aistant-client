@@ -1,6 +1,14 @@
 {
-  "extends": ["next", "airbnb", "prettier"],
-  "plugins": ["prettier"],
+  "extends": [
+    "next",
+    "airbnb",
+    "prettier",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "root": true,
+  "plugins": ["prettier", "@typescript-eslint"],
   "rules": {
     "prettier/prettier": [
       "error",
@@ -8,9 +16,8 @@
         "semi": false
       }
     ],
-    "no-use-before-define": "warn",
-    "no-unused-vars": "warn",
-    "no-shadow": "warn",
+    "no-shadow": "off",
+    "no-use-before-define": "off",
     "import/extensions": [
       "error",
       "ignorePackages",
