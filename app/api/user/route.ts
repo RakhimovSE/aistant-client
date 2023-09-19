@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server"
 import User from "@/app/types/user"
 
-export default async function GET() {
+export async function GET() {
   const res = await fetch("https://reqres.in/api/users/2", {
     next: { revalidate: 60 },
   })
