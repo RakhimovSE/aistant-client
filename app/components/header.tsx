@@ -26,7 +26,7 @@ interface NavbarProps extends FlexProps {
 }
 
 function Navbar({ onSidebarOpen, ...rest }: NavbarProps) {
-  const { user } = useUser()
+  const { user } = useUser({ id: 1 })
 
   return (
     <Flex
@@ -81,7 +81,7 @@ function Navbar({ onSidebarOpen, ...rest }: NavbarProps) {
                   {user ? (
                     <>
                       <Text fontSize="sm">
-                        {user.first_name} {user.last_name}
+                        {user.firstName} {user.lastName}
                       </Text>
                       <Text fontSize="xs" color="gray.600">
                         {user.email}
