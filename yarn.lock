@@ -26,12 +26,12 @@
 
 "@babel/helper-environment-visitor@^7.16.7":
   version "7.22.20"
-  resolved "https://registry.npmjs.org/@babel/helper-environment-visitor/-/helper-environment-visitor-7.22.20.tgz"
+  resolved "https://registry.yarnpkg.com/@babel/helper-environment-visitor/-/helper-environment-visitor-7.22.20.tgz#96159db61d34a29dba454c959f5ae4a649ba9167"
   integrity sha512-zfedSIzFhat/gFhWfHtgWvlec0nqB9YEIVrpuwjruLlXfUSnA8cJB0miHKwqDnQ7d32aKo2xt88/xZptwxbfhA==
 
 "@babel/helper-function-name@^7.16.7":
   version "7.22.5"
-  resolved "https://registry.npmjs.org/@babel/helper-function-name/-/helper-function-name-7.22.5.tgz"
+  resolved "https://registry.yarnpkg.com/@babel/helper-function-name/-/helper-function-name-7.22.5.tgz#ede300828905bb15e582c037162f99d5183af1be"
   integrity sha512-wtHSq6jMRE3uF2otvfuD3DIvVhOsSNshQl0Qrd7qC9oQJzHvOL4qQXlQn2916+CXGywIjpGuIkoyZRRxHPiNQQ==
   dependencies:
     "@babel/template" "^7.22.5"
@@ -39,7 +39,7 @@
 
 "@babel/helper-hoist-variables@^7.16.7":
   version "7.22.5"
-  resolved "https://registry.npmjs.org/@babel/helper-hoist-variables/-/helper-hoist-variables-7.22.5.tgz"
+  resolved "https://registry.yarnpkg.com/@babel/helper-hoist-variables/-/helper-hoist-variables-7.22.5.tgz#c01a007dac05c085914e8fb652b339db50d823bb"
   integrity sha512-wGjk9QZVzvknA6yKIUURb8zY3grXCcOZt+/7Wcy8O2uctxhplmUPkOdlgoNhmdVee2c92JXbf1xpMtVNbfoxRw==
   dependencies:
     "@babel/types" "^7.22.5"
@@ -53,7 +53,7 @@
 
 "@babel/helper-split-export-declaration@^7.16.7":
   version "7.22.6"
-  resolved "https://registry.npmjs.org/@babel/helper-split-export-declaration/-/helper-split-export-declaration-7.22.6.tgz"
+  resolved "https://registry.yarnpkg.com/@babel/helper-split-export-declaration/-/helper-split-export-declaration-7.22.6.tgz#322c61b7310c0997fe4c323955667f18fcefb91c"
   integrity sha512-AsUnxuLhRYsisFiaJwvp1QF+I3KjD5FOxut14q/GzovUe6orHLesW2C7d754kRm53h5gqrz6sFl6sxc4BVtE/g==
   dependencies:
     "@babel/types" "^7.22.5"
@@ -91,7 +91,7 @@
 
 "@babel/template@^7.22.5":
   version "7.22.15"
-  resolved "https://registry.npmjs.org/@babel/template/-/template-7.22.15.tgz"
+  resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.22.15.tgz#09576efc3830f0430f4548ef971dde1350ef2f38"
   integrity sha512-QPErUVm4uyJa60rkI73qneDacvdvzxshT3kksGqlGWYdOTIUOwJ7RDUL8sGqslY1uXWSL6xMFKEXDS3ox2uF0w==
   dependencies:
     "@babel/code-frame" "^7.22.13"
@@ -1784,7 +1784,7 @@ chalk@^2.4.2:
 
 chalk@^4.0.0, chalk@^4.1.2:
   version "4.1.2"
-  resolved "https://registry.npmjs.org/chalk/-/chalk-4.1.2.tgz"
+  resolved "https://registry.yarnpkg.com/chalk/-/chalk-4.1.2.tgz#aac4e2b7734a740867aeb16bf02aad556a1e7a01"
   integrity sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==
   dependencies:
     ansi-styles "^4.1.0"
@@ -3471,7 +3471,7 @@ once@^1.3.0:
 
 onetime@^5.1.2:
   version "5.1.2"
-  resolved "https://registry.npmjs.org/onetime/-/onetime-5.1.2.tgz"
+  resolved "https://registry.yarnpkg.com/onetime/-/onetime-5.1.2.tgz#d0e96ebb56b07476df1dd9c4806e5237985ca45e"
   integrity sha512-kbpaSSGJTWdAY5KPVeMOKXSrPtr8C8C7wodJbcsd51jRnmD+GZu8Y0VoU6Dm5Z4vWr0Ig/1NKuWRKf7j5aaYSg==
   dependencies:
     mimic-fn "^2.1.0"
@@ -3535,7 +3535,7 @@ optionator@^0.9.3:
 
 p-limit@^3.0.2:
   version "3.1.0"
-  resolved "https://registry.npmjs.org/p-limit/-/p-limit-3.1.0.tgz"
+  resolved "https://registry.yarnpkg.com/p-limit/-/p-limit-3.1.0.tgz#e1daccbe78d0d1388ca18c64fea38e3e57e3706b"
   integrity sha512-TYOanM3wGwNGsZN2cVTYPArw454xnXj5qmWF1bEoAc4+cU/ol7GVh7odevjp1FNHduHc3KZMcFduxU5Xc6uJRQ==
   dependencies:
     yocto-queue "^0.1.0"
@@ -3703,16 +3703,16 @@ react-is@^16.13.1, react-is@^16.7.0:
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-relay@^15.0.0:
-  version "15.0.0"
-  resolved "https://registry.yarnpkg.com/react-relay/-/react-relay-15.0.0.tgz#0014bea71611ae5cdbd3ef445aa13398fe3372d1"
-  integrity sha512-KWdeMMKMJanOL9LsGZYkyAekayYIi+Y4mbDM8VYbHVPgTWJWAQP6yJKS+V4D17qIMo1L84QJQjGaQWEG139p9Q==
+react-relay@main:
+  version "0.0.0-main-83ae9735"
+  resolved "https://registry.yarnpkg.com/react-relay/-/react-relay-0.0.0-main-83ae9735.tgz#fc460432537fc50524cd64b4b93a850b71f12976"
+  integrity sha512-/bqRhJGYud6qjEVRi56sSpeEVhywhX/gWxB2w6uQQf4je14T59o6cv8GPOLhJYuQYVVp/Kd3CIcgYcrqqtjVoQ==
   dependencies:
     "@babel/runtime" "^7.0.0"
     fbjs "^3.0.2"
     invariant "^2.2.4"
     nullthrows "^1.1.1"
-    relay-runtime "15.0.0"
+    relay-runtime "0.0.0-main-83ae9735"
 
 react-remove-scroll-bar@^2.3.4:
   version "2.3.4"
@@ -3775,15 +3775,15 @@ regexp.prototype.flags@^1.5.0, regexp.prototype.flags@^1.5.1:
     define-properties "^1.2.0"
     set-function-name "^2.0.0"
 
-relay-compiler@^15.0.0:
-  version "15.0.0"
-  resolved "https://registry.yarnpkg.com/relay-compiler/-/relay-compiler-15.0.0.tgz#dafe2227ffe0cda642707a113a52f6c310c5f689"
-  integrity sha512-19gIIdrVe/lk7Dkz/hqxpBd54bBDWAKG+kR5ael+xznJPdjlr/rlAmh5Tqi6Mgf/wiEQGdtKiZqeNdOW2/wVRw==
+relay-compiler@main:
+  version "0.0.0-main-83ae9735"
+  resolved "https://registry.yarnpkg.com/relay-compiler/-/relay-compiler-0.0.0-main-83ae9735.tgz#46d4299164508f40385580681f6209f9d2fbdaa1"
+  integrity sha512-2tjgxuY1m9uE52BIw7VEzAXON8ntQ19CGtjG90RlQeW5j0SAzpnC6zI4NJemHCwXhU5uCjYEMDG8s6JcUulTpQ==
 
-relay-runtime@15.0.0, relay-runtime@^15.0.0:
-  version "15.0.0"
-  resolved "https://registry.yarnpkg.com/relay-runtime/-/relay-runtime-15.0.0.tgz#e83315ea23925fae8f3317f0091f28924441576f"
-  integrity sha512-7AXkXLQo6gpJNBhk4Kii5b+Yat62HSDD1TgJBi021iSjT1muI8iYd4UZG4f/If209LmaVjkZt2HTNAlk6xtslw==
+relay-runtime@0.0.0-main-83ae9735, relay-runtime@main:
+  version "0.0.0-main-83ae9735"
+  resolved "https://registry.yarnpkg.com/relay-runtime/-/relay-runtime-0.0.0-main-83ae9735.tgz#f993b2587607464b70b161119e6840be8c74d5ca"
+  integrity sha512-LGvJ0FG5lCwLo6H7IEgnoJOCAh0saC57s0v8JIpEnQCFW8abL6w+IOn5cAkmaGhMfOLMOKbOqP2Oejn+fkPsjA==
   dependencies:
     "@babel/runtime" "^7.0.0"
     fbjs "^3.0.2"
@@ -3935,7 +3935,7 @@ side-channel@^1.0.4:
 
 signal-exit@^3.0.3, signal-exit@^3.0.7:
   version "3.0.7"
-  resolved "https://registry.npmjs.org/signal-exit/-/signal-exit-3.0.7.tgz"
+  resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.7.tgz#a9a1767f8af84155114eaabd73f99273c8f59ad9"
   integrity sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==
 
 slash@^3.0.0:

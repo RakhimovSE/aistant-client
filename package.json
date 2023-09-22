@@ -1,13 +1,14 @@
 {
-  "name": "aistant",
+  "name": "aistant-client",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "prestart": "chmod u+x ./server.development.sh && chmod u+x ./server.production.sh",
-    "dev": "./server.development.sh",
-    "build": "next build",
+    "dev": "mkdir -p __generated__ && concurrently \"relay-compiler --watch\" \"./server.development.sh\"",
+    "build": "relay-compiler --validate && next build",
     "start": "./server.production.sh",
-    "lint": "next lint"
+    "lint": "next lint",
+    "relay": "relay-compiler"
   },
   "dependencies": {
     "@chakra-ui/next-js": "^2.1.5",
@@ -23,8 +24,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.11.0",
-    "react-relay": "^15.0.0",
-    "relay-runtime": "^15.0.0",
+    "react-relay": "main",
+    "relay-runtime": "main",
     "swr": "^2.2.2",
     "typescript": "^5.2.2"
   },
@@ -48,6 +49,6 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-relay": "^1.8.3",
     "prettier": "^3.0.3",
-    "relay-compiler": "^15.0.0"
+    "relay-compiler": "main"
   }
 }
