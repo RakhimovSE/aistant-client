@@ -14,9 +14,6 @@
     "@chakra-ui/react": "^2.8.1",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-    "@types/node": "20.6.2",
-    "@types/react": "18.2.21",
-    "@types/react-dom": "18.2.7",
     "ai": "^2.2.12",
     "eslint-config-next": "13.4.19",
     "formik": "^2.4.4",
@@ -26,13 +23,21 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.11.0",
+    "react-relay": "^15.0.0",
+    "relay-runtime": "^15.0.0",
     "swr": "^2.2.2",
     "typescript": "^5.2.2"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.2.0",
+    "@types/node": "^20.6.3",
+    "@types/react": "^18.2.22",
+    "@types/react-dom": "^18.2.7",
+    "@types/react-relay": "^14.1.5",
+    "@types/relay-runtime": "^14.1.13",
     "@typescript-eslint/eslint-plugin": "^6.7.2",
     "@typescript-eslint/parser": "^6.7.2",
+    "concurrently": "^8.2.1",
     "eslint": "^8.49.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-prettier": "^9.0.0",
@@ -41,6 +46,8 @@
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "prettier": "^3.0.3"
+    "eslint-plugin-relay": "^1.8.3",
+    "prettier": "^3.0.3",
+    "relay-compiler": "^15.0.0"
   }
 }
