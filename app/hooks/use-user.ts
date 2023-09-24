@@ -1,35 +1,29 @@
-import { GraphQLError } from "graphql"
-import request, { gql } from "graphql-request"
 import useSWR from "swr"
 import User from "@/app/types/user"
 
-interface UseUserProps {
+type RawUser = {
   id: number
+  email: string
+  first_name: string
+  last_name: string
+  avatar: string
 }
 
-export default function useUser({ id }: UseUserProps) {
-  const userQuery = gql`
-    query getUser($userId: ID!) {
-      user(id: $userId) {
-        id
-        email
-        firstName
-        lastName
-        avatar
-      }
-    }
-  `
-
-  const { data, error, isLoading } = useSWR<
-    { user: User },
-    GraphQLError,
-    [string, number]
-  >([userQuery, id], () =>
-    request("http://localhost:8000/graphql", userQuery, { userId: id }),
+export default function useUser() {
+  const { data, error, isLoading } = useSWR<RawUser>("/api/user", (input) =>
+    fetch(input).then((res) => res.json()),
   )
 
+  const user: User | undefined = data && {
+    id: data.id,
+    email: data.email,
+    firstName: data.first_name,
+    lastName: data.last_name,
+    avatar: data.avatar,
+  }
+
   return {
-    user: data?.user,
+    user,
     isLoading,
     isError: error,
   }
