@@ -7,7 +7,8 @@
     "dev": "./server.development.sh",
     "build": "next build",
     "start": "./server.production.sh",
-    "lint": "next lint"
+    "lint": "next lint",
+    "codegen": "graphql-codegen --config codegen.ts"
   },
   "dependencies": {
     "@apollo/client": "^3.8.4",
@@ -34,6 +35,11 @@
     "typescript": "^5.2.2"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^5.0.0",
+    "@graphql-codegen/client-preset": "^4.1.0",
+    "@graphql-codegen/introspection": "4.0.0",
+    "@graphql-codegen/schema-ast": "^4.0.0",
+    "@parcel/watcher": "^2.3.0",
     "@trivago/prettier-plugin-sort-imports": "^4.2.0",
     "@typescript-eslint/eslint-plugin": "^6.7.2",
     "@typescript-eslint/parser": "^6.7.2",
