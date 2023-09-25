@@ -35,5 +35,5 @@ yarn-error.log*
 next-env.d.ts
 
 # graphql
-gql/graphql.tsx
-gql/schema.graphql
+/gql/graphql.tsx
+/gql/schema.graphql
