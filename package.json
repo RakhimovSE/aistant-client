@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "./server.production.sh",
     "lint": "next lint",
-    "codegen": "graphql-codegen --config codegen.ts"
+    "codegen": "graphql-codegen --require dotenv/config --config codegen.ts dotenv_config_path=.env.local"
   },
   "dependencies": {
     "@apollo/client": "^3.8.4",
@@ -21,6 +21,7 @@
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
     "ai": "^2.2.12",
+    "dotenv": "^16.3.1",
     "encoding": "^0.1.13",
     "eslint-config-next": "13.4.19",
     "formik": "^2.4.4",
