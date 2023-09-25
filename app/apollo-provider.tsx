@@ -8,14 +8,9 @@ import {
   SSRMultipartLink,
 } from "@apollo/experimental-nextjs-app-support/ssr"
 
-interface ApolloProviderProps extends React.PropsWithChildren {
-  host: string
-  port: string
-}
-
-function makeClient(host: string, port: string) {
+function makeClient() {
   const httpLink = new HttpLink({
-    uri: `http://${host}:${port}/graphql`,
+    uri: `http://${process.env.NEXT_PUBLIC_SERVER_HOSTNAME}:${process.env.NEXT_PUBLIC_SERVER_PORT}/graphql`,
     fetchOptions: { cache: "no-store" },
   })
 
@@ -33,13 +28,9 @@ function makeClient(host: string, port: string) {
   })
 }
 
-export default function ApolloProvider({
-  host,
-  port,
-  children,
-}: ApolloProviderProps) {
+export default function ApolloProvider({ children }: React.PropsWithChildren) {
   return (
-    <ApolloNextAppProvider makeClient={() => makeClient(host, port)}>
+    <ApolloNextAppProvider makeClient={makeClient}>
       {children}
     </ApolloNextAppProvider>
   )

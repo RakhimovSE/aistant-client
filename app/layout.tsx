@@ -28,12 +28,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body>
         <Providers>
-          <ApolloProvider
-            host={process.env.NEXT_PUBLIC_SERVER_HOSTNAME as string}
-            port={process.env.NEXT_PUBLIC_SERVER_PORT as string}
-          >
-            {children}
-          </ApolloProvider>
+          <ApolloProvider>{children}</ApolloProvider>
         </Providers>
       </body>
     </html>
