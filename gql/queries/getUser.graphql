@@ -1,0 +1,9 @@
+query getUser($userId: ID!) {
+  user(id: $userId) {
+    id
+    email
+    firstName
+    lastName
+    avatar
+  }
+}
