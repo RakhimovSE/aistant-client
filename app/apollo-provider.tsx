@@ -10,7 +10,7 @@ import {
 
 function makeClient() {
   const httpLink = new HttpLink({
-    uri: process.env.NEXT_PUBLIC_GRAPHQL_ENDOINT,
+    uri: process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT,
     fetchOptions: { cache: "no-store" },
   })
 
