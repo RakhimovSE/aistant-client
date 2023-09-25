@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   env: {
-    title: 'AIstant',
+    title: "AIstant",
   },
 }
 
