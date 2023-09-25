@@ -19,14 +19,14 @@ import {
   VStack,
   useColorModeValue,
 } from "@chakra-ui/react"
-import { useGetUserQuery } from "@/gql/graphql"
+import { useUserQuery } from "@/gql/graphql"
 
 interface NavbarProps extends FlexProps {
   onSidebarOpen: UseDisclosureReturn["onOpen"]
 }
 
 function Navbar({ onSidebarOpen, ...rest }: NavbarProps) {
-  const { data } = useGetUserQuery({ variables: { userId: "3" } })
+  const { data } = useUserQuery({ variables: { userId: "3" } })
   const user = data?.user
 
   return (
