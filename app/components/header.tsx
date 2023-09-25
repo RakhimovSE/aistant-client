@@ -19,14 +19,31 @@ import {
   VStack,
   useColorModeValue,
 } from "@chakra-ui/react"
-import useUser from "@/app/hooks/use-user"
+import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr"
+import { graphql } from "@/gql"
 
 interface NavbarProps extends FlexProps {
   onSidebarOpen: UseDisclosureReturn["onOpen"]
 }
 
+const getUserQuery = graphql(`
+  query getUser($userId: ID!) {
+    user(id: $userId) {
+      id
+      email
+      firstName
+      lastName
+      avatar
+    }
+  }
+`)
+
 function Navbar({ onSidebarOpen, ...rest }: NavbarProps) {
-  const { user } = useUser({ id: 1 })
+  const {
+    data: { user },
+  } = useSuspenseQuery(getUserQuery, {
+    variables: { userId: "3" },
+  })
 
   return (
     <Flex
