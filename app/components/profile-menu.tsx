@@ -17,7 +17,7 @@ import {
 } from "@chakra-ui/react"
 import { useUserQuery } from "@/gql/graphql"
 
-type ButtonComponents = {
+type ProfileMenuButtonComponents = {
   avatarComponent: ReactElement
   nameComponent: ReactElement
   emailComponent: ReactElement
@@ -27,26 +27,29 @@ export default function ProfileMenu() {
   const { data } = useUserQuery({ variables: { userId: "1" } })
   const user = data?.user
 
-  const { avatarComponent, nameComponent, emailComponent }: ButtonComponents =
-    user
-      ? {
-          avatarComponent: <Avatar size="sm" src={user.avatar || undefined} />,
-          nameComponent: (
-            <Text fontSize="sm">
-              {user.firstName} {user.lastName}
-            </Text>
-          ),
-          emailComponent: (
-            <Text fontSize="xs" color="gray.600">
-              {user.email}
-            </Text>
-          ),
-        }
-      : {
-          avatarComponent: <SkeletonCircle />,
-          nameComponent: <Skeleton fontSize="sm">Sample user</Skeleton>,
-          emailComponent: <Skeleton fontSize="xs">sample@email.com</Skeleton>,
-        }
+  const {
+    avatarComponent,
+    nameComponent,
+    emailComponent,
+  }: ProfileMenuButtonComponents = user
+    ? {
+        avatarComponent: <Avatar size="sm" src={user.avatar || undefined} />,
+        nameComponent: (
+          <Text fontSize="sm">
+            {user.firstName} {user.lastName}
+          </Text>
+        ),
+        emailComponent: (
+          <Text fontSize="xs" color="gray.600">
+            {user.email}
+          </Text>
+        ),
+      }
+    : {
+        avatarComponent: <SkeletonCircle />,
+        nameComponent: <Skeleton fontSize="sm">Sample user</Skeleton>,
+        emailComponent: <Skeleton fontSize="xs">sample@email.com</Skeleton>,
+      }
 
   return (
     <Menu>
