@@ -26,7 +26,7 @@ interface NavbarProps extends FlexProps {
 }
 
 function Navbar({ onSidebarOpen, ...rest }: NavbarProps) {
-  const { data } = useUserQuery({ variables: { userId: "3" } })
+  const { data } = useUserQuery({ variables: { userId: "1" } })
   const user = data?.user
 
   return (
@@ -69,7 +69,7 @@ function Navbar({ onSidebarOpen, ...rest }: NavbarProps) {
             >
               <HStack>
                 {user ? (
-                  <Avatar size="sm" src={user.avatar} />
+                  <Avatar size="sm" src={user.avatar || undefined} />
                 ) : (
                   <SkeletonCircle />
                 )}
