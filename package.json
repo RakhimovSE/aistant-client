@@ -8,7 +8,7 @@
     "build": "yarn codegen && next build",
     "start": "./server.production.sh",
     "lint": "next lint",
-    "codegen": "graphql-codegen --require dotenv/config --config codegen.ts dotenv_config_path=.env.local"
+    "codegen": "graphql-codegen --require dotenv/config --config codegen.ts dotenv_config_path=.env"
   },
   "dependencies": {
     "@apollo/client": "^3.8.4",
