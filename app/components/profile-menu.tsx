@@ -15,7 +15,7 @@ import {
   VStack,
   useColorModeValue,
 } from "@chakra-ui/react"
-import { useUserQuery } from "@/gql/graphql"
+import { AccessTokenPayload } from "@/app/types"
 
 type ProfileMenuButtonComponents = {
   avatarComponent: ReactElement
@@ -24,8 +24,7 @@ type ProfileMenuButtonComponents = {
 }
 
 export default function ProfileMenu() {
-  const { data } = useUserQuery({ variables: { userId: "1" } })
-  const user = data?.user
+  const user = {} as AccessTokenPayload
 
   const {
     avatarComponent,
