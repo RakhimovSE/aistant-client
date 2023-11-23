@@ -1,5 +1,6 @@
 import { FiBell, FiMenu } from "react-icons/fi"
 import {
+  Button,
   Flex,
   FlexProps,
   HStack,
@@ -9,13 +10,16 @@ import {
   UseDisclosureReturn,
   useColorModeValue,
 } from "@chakra-ui/react"
+import { signIn, useSession } from "next-auth/react"
 import ProfileMenu from "./profile-menu"
 
-interface NavbarProps extends FlexProps {
+interface HeaderProps extends FlexProps {
   onSidebarOpen: UseDisclosureReturn["onOpen"]
 }
 
-function Navbar({ onSidebarOpen, ...rest }: NavbarProps) {
+function Header({ onSidebarOpen, ...rest }: HeaderProps) {
+  const { status: sessionStatus } = useSession()
+
   return (
     <Flex
       p="1rem"
@@ -47,10 +51,14 @@ function Navbar({ onSidebarOpen, ...rest }: NavbarProps) {
           aria-label="open menu"
           icon={<FiBell />}
         />
-        <ProfileMenu />
+        {sessionStatus === "unauthenticated" ? (
+          <Button onClick={() => signIn()}>Sign in</Button>
+        ) : (
+          <ProfileMenu />
+        )}
       </HStack>
     </Flex>
   )
 }
 
-export default Navbar
+export default Header

@@ -15,7 +15,7 @@ import {
   VStack,
   useColorModeValue,
 } from "@chakra-ui/react"
-import { AccessTokenPayload } from "@/app/types"
+import { signOut, useSession } from "next-auth/react"
 
 type ProfileMenuButtonComponents = {
   avatarComponent: ReactElement
@@ -24,23 +24,21 @@ type ProfileMenuButtonComponents = {
 }
 
 export default function ProfileMenu() {
-  const user = {} as AccessTokenPayload
+  const { data: session } = useSession()
 
   const {
     avatarComponent,
     nameComponent,
     emailComponent,
-  }: ProfileMenuButtonComponents = user
+  }: ProfileMenuButtonComponents = session?.user
     ? {
-        avatarComponent: <Avatar size="sm" src={user.avatar || undefined} />,
-        nameComponent: (
-          <Text fontSize="sm">
-            {user.firstName} {user.lastName}
-          </Text>
+        avatarComponent: (
+          <Avatar size="sm" src={session.user.image || undefined} />
         ),
+        nameComponent: <Text fontSize="sm">{session.user.name}</Text>,
         emailComponent: (
           <Text fontSize="xs" color="gray.600">
-            {user.email}
+            {session.user.email}
           </Text>
         ),
       }
@@ -77,7 +75,7 @@ export default function ProfileMenu() {
         <MenuItem>Settings</MenuItem>
         <MenuItem>Billing</MenuItem>
         <MenuDivider />
-        <MenuItem>Sign out</MenuItem>
+        <MenuItem onClick={() => signOut()}>Sign out</MenuItem>
       </MenuList>
     </Menu>
   )
